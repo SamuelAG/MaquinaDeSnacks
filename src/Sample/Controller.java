@@ -59,50 +59,96 @@ public class Controller implements Initializable {
     void pegarAmendoins() {
         MaquinaDeAmendoim maquina = new MaquinaDeAmendoim();
         String op = cbAmendoins.getSelectionModel().getSelectedItem();
-        if(op.equals(amendoins.get(0)))
-            maquina.entregaSnacks(TipoDeAmendoim.CHOCOLATE);
-        else if(op.equals(amendoins.get(1)))
-            maquina.entregaSnacks(TipoDeAmendoim.SALGADO);
-        else if(op.equals(amendoins.get(2)))
-            maquina.entregaSnacks(TipoDeAmendoim.JAPONES);
+        try {
+            switch (op){
+                case "Amendoim de Chocolate":
+                    maquina.entregaSnacks(TipoDeAmendoim.CHOCOLATE);
+                    break;
+
+                case "Amendoim Salgado":
+                    maquina.entregaSnacks(TipoDeAmendoim.SALGADO);
+                    break;
+
+                case "Amendoim Japones":
+                    maquina.entregaSnacks(TipoDeAmendoim.JAPONES);
+                    break;
+            }
+        } catch (RuntimeException e){
+            System.out.println("nada");
+        }
     }
 
     @FXML
     void pegarChocolates() {
         MaquinaDeChocolate maquina = new MaquinaDeChocolate();
         String op = cbChocolates.getSelectionModel().getSelectedItem();
-        if(op.equals(chocolates.get(0)))
-            maquina.entregaSnacks(TipoDeChocolate.BELGA);
-        else if(op.equals(chocolates.get(1)))
-            maquina.entregaSnacks(TipoDeChocolate.AMARGO);
-        else if(op.equals(chocolates.get(2)))
-            maquina.entregaSnacks(TipoDeChocolate.AO_LEITE);
+        try {
+            switch (op) {
+                case "Chocolate Belga":
+                    maquina.entregaSnacks(TipoDeChocolate.BELGA);
+                    break;
+
+                case "Chocolate Amargo":
+                    maquina.entregaSnacks(TipoDeChocolate.AMARGO);
+                    break;
+
+                case "Chocolate Ao Leite":
+                    maquina.entregaSnacks(TipoDeChocolate.AO_LEITE);
+                    break;
+            }
+        } catch (RuntimeException e){
+            System.out.println("Escolha um Chocolate");
+        }
     }
 
     @FXML
     void pegarBebidas() {
         MaquinaDeBebidas maquina =  new MaquinaDeBebidas();
         String op = cbBebidas.getSelectionModel().getSelectedItem();
-        if(op.equals(bebidas.get(0)))
-            maquina.entregaSnacks(TipoDeBebida.COCACOLA);
-        else if(op.equals(bebidas.get(1)))
-            maquina.entregaSnacks(TipoDeBebida.SPRITE);
-        else if(op.equals(bebidas.get(2)))
-            maquina.entregaSnacks(TipoDeBebida.CHÁ_GELADO);
-        else if(op.equals(bebidas.get(3)))
-            maquina.entregaSnacks(TipoDeBebida.DELL_VALE);
+        try {
+            switch (op){
+                case "Coca-Cola":
+                    maquina.entregaSnacks(TipoDeBebida.COCACOLA);
+                    break;
+
+                case "Sprite":
+                    maquina.entregaSnacks(TipoDeBebida.SPRITE);
+                    break;
+
+                case "Chá Gelado":
+                    maquina.entregaSnacks(TipoDeBebida.CHÁ_GELADO);
+                    break;
+
+                case "Dell Vale":
+                    maquina.entregaSnacks(TipoDeBebida.DELL_VALE);
+                    break;
+            }
+        } catch (RuntimeException e){
+            System.out.println("Escolha uma Bebida");
+        }
     }
 
     @FXML
     void pegarJujubas() {
         MaquinaDeJujubas maquina = new MaquinaDeJujubas();
         String op = cbJujubas.getSelectionModel().getSelectedItem();
-        if(op.equals(jujubas.get(0)))
-            maquina.entregaSnacks(TipoDeJujuba.GOMA);
-        else if(op.equals(jujubas.get(1)))
-            maquina.entregaSnacks(TipoDeJujuba.AÇUCARADA);
-        else if(op.equals(jujubas.get(2)))
-            maquina.entregaSnacks(TipoDeJujuba.IOGURTE);
+        try {
+            switch (op){
+                case "Jujuba de Goma":
+                    maquina.entregaSnacks(TipoDeJujuba.GOMA);
+                    break;
+
+                case "Jujuba Açucarada":
+                    maquina.entregaSnacks(TipoDeJujuba.AÇUCARADA);
+                    break;
+
+                case "Jujuba de Iogurte":
+                    maquina.entregaSnacks(TipoDeJujuba.IOGURTE);
+                    break;
+            }
+        } catch (RuntimeException e){
+            System.out.println("Escolha uma Jujuba");
+        }
     }
 
 
@@ -148,7 +194,6 @@ public class Controller implements Initializable {
         chocolates.add(chocolateAoLeite);
         obChocolates = FXCollections.observableArrayList(chocolates);
         cbChocolates.setItems(obChocolates);
-
     }
 
     @Override
