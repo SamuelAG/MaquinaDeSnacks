@@ -30,9 +30,4 @@ public class MaquinaDeAmendoim implements MaquinaDeSnacks {
 
         return amendoim;
     }
-
-    @Override
-    public String mostraAtual() {
-        return "Maquina de Amendoim";
-    }
 }

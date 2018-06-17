@@ -30,9 +30,4 @@ public class MaquinaDeJujubas implements MaquinaDeSnacks{
 
         return jujuba;
     }
-
-    @Override
-    public String mostraAtual() {
-        return "Maquina de Jujubas";
-    }
 }

@@ -34,9 +34,4 @@ public class MaquinaDeBebidas implements MaquinaDeSnacks {
 
         return bebida;
     }
-
-    @Override
-    public String mostraAtual() {
-        return null;
-    }
 }

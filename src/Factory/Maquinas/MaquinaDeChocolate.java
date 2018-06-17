@@ -30,9 +30,4 @@ public class MaquinaDeChocolate implements MaquinaDeSnacks {
 
         return chocolate;
     }
-
-    @Override
-    public String mostraAtual() {
-        return "Maquina de Chocolate";
-    }
 }
